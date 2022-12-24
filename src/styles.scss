@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background:rgba(143,143,143,.5921568627) url('../src/assets/bg.webp');
+    background-size: cover;
+    cursor: url('../src/assets/mouse.webp'),auto!important;
+    font-family: Poppins,sans-serif;
+}
+:root{
+    --primary-color: #ab0202;
+    --bg-color: #70707030;
+}

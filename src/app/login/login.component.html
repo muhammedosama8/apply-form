@@ -1,0 +1,104 @@
+<div class="login">
+    <div class="container">
+        <img src="../../assets/shadow_home.webp" alt="shadow" class="shadow" />
+        <img src="../../assets/Logo_V2.gif" alt="logo" class="logo-gif" @fadeImg/>
+        <img src="../../assets/two_face_icon.webp" alt="icon" class="icon" />
+        <img src="../../assets/whole_curcle_icon.webp" alt="icon" class="icon2" />
+
+        <h2 class="title">Apply</h2>
+        <div class="form">
+            <form [formGroup]="applyForm" (ngSubmit)="onSubmit()" @fadeForm>
+                <div class="grid-row">
+                    <input type="text" class="{{getCheck('name') ? 'error-border' : ''}}" name="name" placeholder="Name" formControlName="name" />
+                    <span
+                        class="text-danger"
+                        *ngIf="getCheck('name')">
+                        Name is required
+                    </span>
+                </div>
+                <div class="grid-half1">
+                    <input type="text" class="{{getCheck('position') ? 'error-border' : ''}}" name="position" placeholder="Position" formControlName="position"  />
+                    <span
+                        class="text-danger"
+                        *ngIf="getCheck('position')">
+                        Position is required
+                    </span>
+                </div>
+                <div class="grid-half2">
+                    <input type="text" class="{{getCheck('availableDate') ? 'error-border' : ''}}" name="available-date" placeholder="Available Date" formControlName="availableDate" />
+                    <span
+                        class="text-danger"
+                        *ngIf="getCheck('availableDate')">
+                        Available Date is required
+                    </span>
+                </div>
+                <div class="grid-row">
+                    <input type="email" class="{{getCheck('email') ? 'error-border' : ''}}" name="email" formControlName="email"
+                    placeholder="Email" />
+                    <span
+                        class="text-danger"
+                        *ngIf="getCheck('email')">
+                        Email is required
+                    </span>
+                </div>
+                <div class="grid-half1">
+                    <input type="date" class="{{getCheck('birthday') ? 'error-border' : ''}}" name="birthday" placeholder="Birthday"  formControlName="birthday"/>
+                    <span
+                        class="text-danger"
+                        *ngIf="getCheck('birthday')">
+                        Birthday is required
+                    </span>
+                </div>
+
+                <div class="grid-half2">
+                    <input type="tel" class="{{getCheck('phone') ? 'error-border' : ''}}" name="phone" placeholder="phone" minlength="11" formControlName="phone"
+                    maxlength="14" />
+                    <span
+                        class="text-danger"
+                        *ngIf="getCheck('phone')">
+                        Phone is required
+                    </span>
+                </div>
+                <div class="grid-row">
+                    <input type="text" class="{{getCheck('address') ? 'error-border' : ''}}" name="address" placeholder="Address" formControlName="address"/>
+                    <span
+                        class="text-danger"
+                        *ngIf="getCheck('address')">
+                        Address is required
+                    </span>
+                </div>
+                <div class="grid-half1">
+                    <input type="number" class="{{getCheck('expectedSalary') ? 'error-border' : ''}}" name="expected-salary" placeholder="Expected Salary" formControlName="expectedSalary"/>
+                    <span
+                        class="text-danger"
+                        *ngIf="getCheck('expectedSalary')">
+                        Expected Salary is required
+                    </span>
+                </div>
+                <div class="grid-half2">
+                    <input type="text" class="{{getCheck('maritalStatus') ? 'error-border' : ''}}" name="marital-status" placeholder="Marital Status" formControlName="maritalStatus"/>
+                    <span
+                        class="text-danger"
+                        *ngIf="getCheck('maritalStatus')">
+                        Marital Status is required
+                    </span>
+                </div>
+                <div class="grid-row">
+                    <input type="file" class="{{getCheck('file') ? 'error-border' : ''}}" accept=".doc,.docx,.xml,.pdf" formControlName="file" />
+                    <span
+                        class="text-danger"
+                        *ngIf="getCheck('file')">
+                        File is required
+                    </span>
+                </div>
+
+                <input type="submit" class="submit" value="Login" [disabled]="this.applyForm.invalid" />
+            </form>
+        </div>
+
+        <div class="popup" @fadeForm *ngIf="openPopup">
+            <img src="../../assets/success.png" alt="Success" class="success" />
+            <p class="header"> Success Apply </p>
+        </div>
+    </div>
+</div>
