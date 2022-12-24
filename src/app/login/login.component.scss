@@ -7,6 +7,9 @@
     position: relative;
     padding-bottom: 3rem;
 
+    @media (max-width: 1024px) {
+        background-size: 45% 65%;
+    }
     @media (max-width: 768px) {
         background: none;
     }
@@ -54,6 +57,12 @@
         right: 135px;
         top: 50%;
         transform: translate(0, -50%);
+        @media (max-width: 1024px) {
+            right: 33px;
+        }
+        @media (max-width: 900px) {
+            right: 15px;
+        }
         @media (max-width: 768px) {
             display: none;
         }
